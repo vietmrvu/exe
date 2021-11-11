@@ -14,8 +14,19 @@
 }
 *{
     font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0px; 
+    margin: 0px;
     padding: 0px;
+}
+
+h1, h2, h3 {
+    padding: 3px;
+    line-height: 31px;
+}
+
+ul, li {
+    margin: auto;
+    padding: revert;
+    padding-bottom:  2px;
 }
 #menu #right{
     color: white;
