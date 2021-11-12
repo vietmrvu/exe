@@ -284,24 +284,24 @@
             var error = document.getElementById("error")
             var err = ""
             // R1
-            if (firstname.match("^[A-Z a-z]{1,30}$") == null) {
+            if (firstname.match("[A-Z]{1,15}") == null) {
                 err += "Họ cần phải viết hoa, VD: VŨ<br>";
             }
             // R1
-            if (lastname.match("^[A-Z a-z]{1,30}$") == null) {
+            if (lastname.match("[A-Z]{1,15}") == null) {
                 err += "Tên cần phải viết hoa, VD: VIỆT<br>"
             }
             //R2
-            if (email.match("^[a-zA-Z]*@[a-z.A-Z]*$") == null) {
+            if (email.match("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"") == null) {
                 err += "Email cần giống như VD: email@domain.com<br>";
             }
 
             //R3
-            if (phone_number.match("^((/+84)|0)[0-9]{9,10}$") == null) {
+            if (phone_number.match("^((\+84)|0)\d{9,10}$") == null) {
                 err += "Số điện thoại cần giống như VD: 0922222222 <br>";
             }
             //R4
-            if (age.match("^((([0-9])|([0-9][0-9])|(1[0-5][0-9]))|(150))$") == null) {
+            if (age.match("^(((\d)|(\d\d)|(1[0-5][0-9]))|(150))$") == null) {
                 err += "Số tuổi phải giống như VD: 1 - 150<br>";
             }
             if (err === "") {
