@@ -13,6 +13,8 @@
 
         * {
             box-sizing: border-box;
+             margin: 0;
+             padding: 0;
         }
 
         body {
@@ -43,18 +45,7 @@
             margin: 20px 0 30px;
         }
 
-        span {
-            font-size: 12px;
-        }
-
-        a {
-            color: #333;
-            font-size: 14px;
-            text-decoration: none;
-            margin: 15px 0;
-        }
-
-        button {
+         button.ghost, button.save{
             border-radius: 20px;
             border: white;
             background-color: black;
@@ -67,11 +58,11 @@
             transition: transform 80ms ease-in;
         }
 
-        button:active {
+         button.ghost:active, button.save:active {
             transform: scale(0.95);
         }
 
-        button:focus {
+        button.ghost:focus, button.save:focus {
             outline: none;
         }
 
@@ -104,9 +95,10 @@
                     0 10px 10px rgba(0, 0, 0, 0.22);
                 position: relative;
                 overflow: hidden;
-                width: 768px;
+                width: 968px;
                 max-width: 100%;
-                min-height: 480px;
+                height: 500px;
+                max-height: 100%;
             }
 
             .form-container {
@@ -164,12 +156,11 @@
                 transition: transform 0.6s ease-in-out;
                 z-index: 100;
             }
-
             .container.right-panel-active .overlay-container {
                 transform: translateX(-100%);
             }
 
-            .overlay{ 
+        .overlay{ 
             background: grey;
             background-repeat: no-repeat;
             background-size: cover;
@@ -235,40 +226,13 @@
             height: 40px;
             width: 40px;
         }
-
         #submit {
             margin-top: 20px;
             background-color: black;
             padding: 20px 60px;
         }
-
         #submit a {
             color: white;
-            text-decoration: none;
-        }
-
-        footer {
-            background-color: #222;
-            color: #fff;
-            font-size: 14px;
-            bottom: 0;
-            position: fixed;
-            left: 0;
-            right: 0;
-            text-align: center;
-            z-index: 999;
-        }
-
-        footer p {
-            margin: 10px 0;
-        }
-
-        footer i {
-            color: red;
-        }
-
-        footer a {
-            color: #3c97bf;
             text-decoration: none;
         }
     </style>
@@ -277,10 +241,11 @@
 <body style="background: url(assetstwo/code.gif)">
     <div class="container" id="container">
         <div class="form-container sign-in-container">
-            <form action="member.html">
+            <form action="member.html" novalidate>
                 <h1>Tham gia tổ chức EXE</h1>
-                <input type="text" pattern="[A-Z]{1,15}" id="firstname" placeholder="Nhập họ, VD: JOBS - đề nghị viết hoa"
-                    title="This isn't the firstname, it's must be similar the example: JOBS" required />
+                <span id="error" style="color: red; font-size: 11px "></span>
+                <input type="text" pattern="[A-Z]{1,15}" id="firstname" placeholder="Nhập họ, VD: VŨ - đề nghị viết hoa"
+                    title="This isn't the firstname, it's must be similar the example: VIỆT" required />
                 <input type="text" pattern="[A-Z]{1,15}" id="lastname" placeholder="Nhập tên, VD: STEVE - đề nghị viết hoa"
                     title="This isn't the lastname, it's must be similar the example: STEVE" required />
                 <input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
@@ -292,14 +257,14 @@
                 <input class="input" type="text" id="phone_number" name="phone_number" pattern="^((\+84)|0)\d{9,10}$"
                     placeholder="Nhập số điện thoại, VD: 0922222222"
                     title="This isn't the phone number name, it's must be similar the example: 0922222222" required />
-                <button class="save" id="sub"> Xác nhận </button>
+                <button class="save" id="sub" style="margin-bottom: 10px"> Xác nhận </button> 
             </form>
         </div>
         <div class="overlay-container">
             <div class="overlay">
                 <div class="overlay-panel overlay-right">
                     <h1>Xin chào</h1>
-                    <p>Nếu không thể tham gia, hãy giới thiệu cho nhiều người biết đến</p>
+                    <p>Nếu không thể tham gia, hãy giới thiệu cho nhiều người biết đến trước khi quay lại trang chủ</p>
                     <button class="ghost" id="goback">Quay lại trang chủ</button>
                 </div>
             </div>
@@ -317,6 +282,35 @@
             sessionStorage.age = age
             sessionStorage.email = email
             sessionStorage.phone_number = phone_number
+            var error = document.getElementById("error")
+            var err = ""
+            // R1
+            if (firstname.match("^[A-Z a-z]{1,30}$") == null) {
+                err += "Họ cần phải viết hoa, VD: VŨ<br>";
+            }
+            // R1
+            if (lastname.match("^[A-Z a-z]{1,30}$") == null) {
+                err += "Tên cần phải viết hoa, VD: VIỆT<br>"
+            }
+            //R2
+            if (email.match("^[a-zA-Z]*@[a-z.A-Z]*$") == null) {
+                err += "Email cần giống như VD: email@domain.com<br>";
+            }
+
+            //R3
+            if (phone_number.match("^((/+84)|0)[0-9]{9,10}$") == null) {
+                err += "Số điện thoại cần giống như VD: 0922222222 <br>";
+            }
+            //R4
+            if (age.match("^((([0-9])|([0-9][0-9])|(1[0-5][0-9]))|(150))$") == null) {
+                err += "Số tuổi phải giống như VD: 1 - 150<br>";
+            }
+            if (err === "") {
+                return true
+            } else {
+                error.innerHTML = err
+                return false
+            }
         }
         function prefillData() {
             if (sessionStorage.firstname != null) {
