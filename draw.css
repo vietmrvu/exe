@@ -6,6 +6,9 @@
     margin: 0;
     font-size: 54px;
 }
+a{
+    text-decoration: none 
+}
 #menu{
     background-color: grey;
     padding: 9px;
