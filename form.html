@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Tham gia tổ chức </title>
-    <link rel="icon"  href="assetstwo/hack.png">
+    <title>Tham gia tổ chức EXE</title>
+    <link rel="icon" href="assetstwo/hack.png">
     <style>
         @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
@@ -137,7 +137,8 @@
 
         @keyframes show {
 
-            0%,49.99% {
+            0%,
+            49.99% {
                 opacity: 0;
                 z-index: 1;
             }
@@ -300,7 +301,7 @@
                 err += "Tên cần phải viết hoa, VD: VIỆT => VIET<br>"
             }
             //R2
-            if (email.match("[a-z0-9._%+-]+@[a-z0-9.-]+/.[a-z]{2,}$") == null) {
+            if (email.match("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$") == null) {
                 err += "Email cần giống như VD: email@domain.com<br>";
             }
             //R3
