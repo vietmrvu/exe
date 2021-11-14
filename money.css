@@ -1,0 +1,349 @@
+/* chung */
+*{
+    font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+h1, h2, h3 {
+    padding: 3px;
+    line-height: 31px;
+}
+ul, li {
+    margin: auto;
+    padding: revert;
+    padding-bottom:  2px;
+}
+/* chung */
+/* title */
+#title{
+    background-color: black;
+    text-align: center;
+    color: white;
+    padding: 50px;
+    margin: 0;
+    font-size: 54px;
+}
+#image {
+    width: 50px;
+    height: 50px;
+}
+a{
+    text-decoration: none
+}
+/* title */
+/* menu */
+#menu{
+    background-color: grey;
+    padding: 9px;
+    overflow: hidden;
+    font-size: 34px;
+}
+#menu #right{
+    color: white;
+    font-size: 34px;
+    padding: 7px 14px;
+    font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    border-bottom:  7px solid grey;
+    font-weight:  bold;
+}
+#menu div{
+    display:  inline-block;
+    text-align:  center; 
+    margin:  20px calc((100% - 800px)/2);
+}
+#menu #right:hover{
+    color: white;
+    border-bottom:  7px solid white;
+}
+/* menu */
+/* bố cục */
+#container{
+    display: flex;
+    flex-wrap: nowrap
+}
+#left-side{
+    flex:50%;
+    background-color:#fffdfdf2
+}
+#right-side{
+    flex:50%;
+    background-color:white
+}
+/* bố cục */
+/* footer */
+#su {
+    
+    color: white;
+    display: block;
+}
+#f{
+    background-color: black;
+    padding: 20px;
+}
+#footer{
+    color: white;
+}
+/* footer */
+table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+} 
+table td, table th {
+    border: 1px solid grey;
+    text-align: center;
+    padding:  10px;
+    max-width: 100%;
+}
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-size: 59px
+}
+table td {
+    font-size: 62px
+}
+@media (max-width: 1170px){
+    table th {
+        padding-top: 9px;
+        padding-bottom: 9px;
+        text-align: center;
+        background-color: black;
+        color: white;
+        font-size: 47px
+    }
+    table td {
+        font-size: 50px
+    }
+}
+@media (max-width: 945px){
+    table th {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        text-align: center;
+        background-color: black;
+        color: white;
+        font-size: 39px
+    }
+    table td {
+        font-size: 42px
+    }
+}
+/* footer */
+@media(max-width: 1000px){
+    /* menu */
+    #menu{
+        background-color: grey;
+        padding: 14px;
+        overflow: hidden;
+        font-size: 22px;
+    }
+    #menu #right{
+        color: white;
+        font-size: 22px;
+        padding: 8px 10px;
+        font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        float: right;
+        font-weight:  bold;
+        text-decoration: none;
+    }
+    #menu div{
+        display:  inline-block;
+        text-align:  center;
+        margin: 20px calc((100% - 475px)/2);
+    }
+    /* menu */
+}
+@media(max-width: 800px){
+    /* table */
+    table th {
+        padding-top: 7px;
+        padding-bottom: 7px;
+        text-align: center;
+        background-color: black;
+        color: white;
+        font-size: 35px
+    }
+    table td {
+        font-size: 38px
+    }
+    /* table */
+    /* menu */
+    #menu{
+        background-color: grey;
+        padding: 14px;
+        overflow: hidden;
+        font-size: 20px;
+    }
+    #title{
+        background-color: black;
+        text-align: center;
+        color: white;
+        padding: 50px;
+        margin: 0;
+        font-size: 44px;
+    }
+    #menu div{
+        display:  inline-block;
+        text-align:  center;
+        margin: 20px calc((100% - 437px)/2);
+    }
+    #menu #right{
+        color: white;
+        font-size: 20px;
+        padding: 8px 10px;
+        float: right;
+        font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-decoration: none;
+        font-weight:  bold;
+        border-bottom:  7px solid grey;
+    }
+    /* menu */
+    /* title */
+    #image {
+        width: 40px;
+        height: 40px;
+    }
+    /* title */
+}
+@media(max-width: 725px){
+    table th {
+        padding-top: 7px;
+        padding-bottom: 7px;
+        text-align: center;
+        background-color: black;
+        color: white;
+        font-size: 29px
+    }
+    table td {
+        font-size: 32px
+    }
+}
+@media(max-width: 600px){
+    table th {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: center;
+        background-color: black;
+        color: white;
+        font-size: 27px
+    }
+    table td {
+        font-size: 30px
+    }
+}
+@media(max-width: 570px){
+    table th {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: center;
+        background-color: black;
+        color: white;
+        font-size: 20px
+    }
+    table td {
+        font-size: 23px
+    }
+}
+@media(max-width: 411px){
+    /* table */
+    table th {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: center;
+        background-color: black;
+        color: white;
+        font-size: 16px
+    }
+    table td {
+        font-size: 19px
+    }
+    /* table */
+    /* menu */
+    #menu{
+        background-color: grey;
+        padding: 4px;
+        overflow: hidden;
+        font-size: 12px;
+    }    
+    #title{
+        background-color: black;
+        text-align: center;
+        color: white;
+        padding: 50px;
+        margin: 0;
+        font-size: 31px;
+    } 
+    #menu div{
+        display:  inline-block;
+        text-align:  center; 
+        margin:  20px calc((100% - 300px)/2);
+    }
+    #menu #right{
+        color: white;
+        font-size: 12px;
+        padding: 8px 10px;
+        font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight:  bold;
+        text-decoration: none;
+        border-bottom:  7px solid grey; 
+    }
+    /* menu */
+    /* title */
+    #image {
+        width: 28px;
+        height: 28px;
+    }
+    /* title */
+}
+@media(max-width: 320px){
+    /* menu */
+    #menu{
+        background-color: grey;
+        padding: 4px;
+        overflow: hidden;
+    }   
+    #title{
+        background-color: black;
+        text-align: center;
+        color: white;
+        padding: 20px 10px;
+        margin: 0;
+        font-size: 14px;
+    } 
+    /* table */
+    table th {
+        text-align: center;
+        background-color: black;
+        color: white;
+        font-size: 13px
+    }
+    table td {
+        font-size: 16px
+    }
+    /* table */
+    #menu div{
+        display:  inline-block;
+        text-align:  center; 
+        margin:  20px calc((100% - 250px)/2);
+    }
+    #menu #right{
+        color: white;
+        font-size: 10px;
+        padding: 2px 7px;
+        font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight:  bold;
+        text-decoration: none;
+        border-bottom:  7px solid grey; 
+    }
+    /* menu */
+    /* title */
+    #image {
+        width: 10px;
+        height: 10px;
+    }
+    /* title */
+}
